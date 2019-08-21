@@ -1,0 +1,465 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title goes here</title>
+    <style>
+        /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+        /*All the styling goes here*/
+        
+        img {
+            border: none;
+            -ms-interpolation-mode: bicubic;
+            max-width: 100%;
+        }
+        
+        body {
+            background-color: #fafafa;
+            font-family: sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        table {
+            border-collapse: separate;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            width: 100%;
+        }
+        
+        table td {
+            font-family: sans-serif;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+        
+        .body {
+            height: 100vh;
+            background-color: #f6f6f6;
+            width: 100%;
+        }
+        /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+        
+        .container {
+            display: block;
+            margin: 0 auto !important;
+            /* makes it centered */
+            max-width: 580px;
+            padding: 10px;
+            width: 580px;
+        }
+        /* This should also be a block element, so that it will fill 100% of the .container */
+        
+        .content {
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            max-width: 580px;
+            padding: 10px;
+        }
+        /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+        
+        .main {
+            background: #ffffff;
+            border-radius: 29px;
+            border: solid 1px #E1E1E1;
+            width: 100%;
+        }
+        
+        .highlighted {
+            color: #EF3781;
+        }
+        
+        p {
+            color: #858585;
+        }
+        
+        .wrapper {
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        
+        .content-block {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        
+        .footer {
+            clear: both;
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+            color: #999999;
+            font-size: 12px;
+            text-align: center;
+        }
+        /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #000000;
+            font-family: sans-serif;
+            font-weight: 400;
+            line-height: 1.4;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 35px;
+            font-weight: 300;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        
+        p,
+        ul,
+        ol {
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+        
+        p li,
+        ul li,
+        ol li {
+            list-style-position: inside;
+            margin-left: 5px;
+        }
+        
+        a {
+            color: #EF3781;
+            text-decoration: underline;
+        }
+        /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+        
+        .btn {
+            box-sizing: border-box;
+            width: 100%;
+        }
+        
+        .btn>tbody>tr>td {
+            padding-bottom: 15px;
+        }
+        
+        .btn table {
+            width: auto;
+        }
+        
+        .btn table td {
+            background-color: #ffffff;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .btn a {
+            background-color: #ffffff;
+            border: solid 1px #EF3781;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #3498db;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+            padding: 12px 25px;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+        
+        .btn-primary table td {
+            background-color: #EF3781;
+        }
+        
+        .btn-primary a {
+            background-color: #EF3781;
+            border-color: #EF3781;
+            color: #ffffff;
+        }
+        /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+        
+        .last {
+            margin-bottom: 0;
+        }
+        
+        .first {
+            margin-top: 0;
+        }
+        
+        .align-center {
+            text-align: center;
+        }
+        
+        .align-right {
+            text-align: right;
+        }
+        
+        .align-left {
+            text-align: left;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        .mt0 {
+            margin-top: 0;
+        }
+        
+        .mb0 {
+            margin-bottom: 0;
+        }
+        
+        .preheader {
+            color: transparent;
+            display: none;
+            height: 0;
+            max-height: 0;
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+            mso-hide: all;
+            visibility: hidden;
+            width: 0;
+        }
+        
+        .powered-by a {
+            text-decoration: none;
+        }
+        
+        hr {
+            border: 0;
+            border-bottom: 1px solid #f6f6f6;
+            margin: 20px 0;
+        }
+        /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+        
+        @media only screen and (max-width: 620px) {
+            table[class=body] h1 {
+                font-size: 28px !important;
+                margin-bottom: 10px !important;
+            }
+            table[class=body] p,
+            table[class=body] ul,
+            table[class=body] ol,
+            table[class=body] td,
+            table[class=body] span,
+            table[class=body] a {
+                font-size: 16px !important;
+            }
+            table[class=body] .wrapper,
+            table[class=body] .article {
+                padding: 10px !important;
+            }
+            table[class=body] .content {
+                padding: 0 !important;
+            }
+            table[class=body] .container {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            table[class=body] .main {
+                border-left-width: 0 !important;
+                border-radius: 0 !important;
+                border-right-width: 0 !important;
+            }
+            table[class=body] .btn table {
+                width: 100% !important;
+            }
+            table[class=body] .btn a {
+                width: 100% !important;
+            }
+            table[class=body] .img-responsive {
+                height: auto !important;
+                max-width: 100% !important;
+                width: auto !important;
+            }
+        }
+        /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+        
+        @media all {
+            .ExternalClass {
+                width: 100%;
+            }
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+            .apple-link a {
+                color: inherit !important;
+                font-family: inherit !important;
+                font-size: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+                text-decoration: none !important;
+            }
+            #MessageViewBody a {
+                color: inherit;
+                text-decoration: none;
+                font-size: inherit;
+                font-family: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+            }
+            .btn-primary table td:hover {
+                background-color: #B32960 !important;
+            }
+            .btn-primary a:hover {
+                background-color: #B32960 !important;
+                border-color: #B32960 !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="">
+    <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+        <tr>
+            <td>&nbsp;</td>
+            <td class="container">
+                <div class="content">
+
+                    <!-- START CENTERED WHITE CONTAINER -->
+                    <table role="presentation" class="main">
+
+                        <!-- START MAIN CONTENT AREA -->
+                        <tr>
+                            <td class="wrapper">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                    <tr></tr>
+                                    <tr>
+                                        <td>
+                                            <h2>You’re nearly there</h2>
+                                            <p>Hi there,</p>
+                                            <p>Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="left">
+                                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a href="# target=" _blank ">Call To Action</a> </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p>Once your click on this button, your email get verified and you will automatically redirect to new page. or <span class="highlighted ">sign in</span> to ideabiz to get started. </p>
+                                            <p>We’re glad you’re here,<br> The Ideamart Team</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <hr>
+
+                                            <?xml version="1.0 " encoding="UTF-8 "?>
+                                            <svg width="40px " height="40px " viewBox="0 0 40 40 " version="1.1 " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink ">
+                                                <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+                                                <title>help</title>
+                                                <desc>Created with Sketch.</desc>
+                                                <g id="design " stroke="none " stroke-width="1 " fill="none " fill-rule="evenodd ">
+                                                    <g id="email.template " transform="translate(-238.000000, -690.000000) " fill="#858585 " fill-rule="nonzero ">
+                                                        <g id="help " transform="translate(238.000000, 690.000000) ">
+                                                            <path d="M40,27.0703125 C40,21.2399292 36.0714722,16.1459351 30.5316163,14.6109009 C30.1834106,6.49536133 23.4732055,0 15.2734375,0 C6.85150148,0 0,6.85150148 0,15.2734375 C0,18.0181884 0.730590781,20.6906128
+                                                                                2.11791992,23.0368042 L0.0561523438,30.4904175 L7.51007078,28.4289551 C9.66674805,29.7042847 12.0996094,30.4226684 14.6105957,30.5310059 C16.1453247,36.071167 21.2396241,40 27.0703125,40
+                                                                                C29.397583,40 31.6607666,39.380188 33.649292,38.2025147 L39.9435425,39.9435425 L38.2025147,33.649292 C39.380188,31.6607666 40,29.397583 40,27.0703125 Z M7.87994383,25.8947754
+                                                                                L3.41766359,27.1292114 L4.65209961,22.6669312 L4.3707275,22.2268677 C3.04473875,20.1522827 2.34375,17.7478027 2.34375,15.2734375 C2.34375,8.14392094 8.14392094,2.34375 15.2734375,2.34375
+                                                                                C22.4029541,2.34375 28.203125,8.14392094 28.203125,15.2734375 C28.203125,22.4029541 22.4029541,28.203125 15.2734375,28.203125 C12.7990723,28.203125 10.3948975,27.5021363 8.32000734,26.1761475
+                                                                                L7.87994383,25.8947754 Z M36.5823364,36.5823364 L33.2711792,35.6661988 L32.8289795,35.9539795 C31.1148071,37.0675659 29.12323,37.65625 27.0703125,37.65625 C22.487793,37.65625
+                                                                                18.4609985,34.6932984 17.0343017,30.4446411 C24.0515137,29.6356202 29.6356202,24.0515137 30.4449463,17.0339966 C34.6932984,18.4609985 37.65625,22.487793 37.65625,27.0703125 C37.65625,29.12323
+                                                                                37.0675659,31.1148071 35.9539795,32.8289795 L35.6661988,33.2711792 L36.5823364,36.5823364 Z " id="Shape "></path>
+                                                            <polygon id="Path " points="14 21 16 21 16 23 14 23 "></polygon>
+                                                            <path d="M17.75,11.7682119 C17.75,12.4452607 17.4898437,13.0701572 17.0175781,13.5280422 L14.375,16.0909561 L14.375,19 L16.625,19 L16.625,17.140832 L18.5366211,15.2869412 C19.4665039,14.3851408
+                                                                                20,13.1027525 20,11.7682119 C20,9.13886585 17.9814454,7 15.5,7 C13.0185547,7 11,9.13886585 11,11.7682119 L13.25,11.7682119 C13.25,10.4535389 14.2592773,9.38410596 15.5,9.38410596
+                                                                                C16.7407227,9.38410596 17.75,10.4535389 17.75,11.7682119 Z " id="Path "></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+
+                                            <h4>Need Help?</h4>
+
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <!-- END MAIN CONTENT AREA -->
+                    </table>
+                    <!-- END CENTERED WHITE CONTAINER -->
+
+                    <!-- START FOOTER -->
+                    <div class="footer ">
+                        <table role="presentation " border="0 " cellpadding="0 " cellspacing="0 ">
+                            <tr>
+                                <td class="content-block ">
+                                    <span class="apple-link ">Dialog, the dialog logo, idiabiz, the ideabiz logo, ideamart and the ideamart logo are either registered or trademarkes or trademarks of Dialog Axiata PLC.
+                                        All the other trademarks are the property of their respective owners</span>
+                                    <br>
+                                    <span class="apple-link ">Alfred house ave, Colombo 00300, Sri Lanka</span>
+                                    <br> Don't like these emails? <a href="http://bit.ly/2YBDEYH " target="_blank ">Unsubscribe</a>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="content-block powered-by ">
+                                    Powered by <a href="# ">ideamart</a>.
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- END FOOTER -->
+
+                </div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</body>
+
+</html>
