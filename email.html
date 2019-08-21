@@ -58,12 +58,13 @@
         /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
         
         .container {
+            top: 25%;
             display: block;
             margin: 0 auto !important;
             /* makes it centered */
-            max-width: 580px;
+            max-width: 680px;
             padding: 10px;
-            width: 580px;
+            width: 680px;
         }
         /* This should also be a block element, so that it will fill 100% of the .container */
         
@@ -275,7 +276,8 @@
         
         .footer-top .footer-text-wrapper {
             text-align: left;
-            display: inline;
+            display: inline-block;
+            margin-left: 10px;
         }
         
         .footer-top .footer-text-wrapper a {
@@ -284,7 +286,6 @@
         
         .footer-top h4 {
             display: inline;
-            margin-left: 10px;
         }
         /* -------------------------------------
           RESPONSIVE AND MOBILE FRIENDLY STYLES
@@ -329,6 +330,9 @@
                 height: auto !important;
                 max-width: 100% !important;
                 width: auto !important;
+            }
+            table[class="body"] .footer {
+                font-size: 14px;
             }
         }
         /* -------------------------------------
